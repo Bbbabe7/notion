@@ -20,29 +20,15 @@ body{
   letter-spacing: 5px;
 }
 
-.days, .hours, .minutes, .seconds {
+.block {
   display: inline-block;
   padding: 20px;
   width: 100px;
   border-radius: 5px;
-}
-
-.days {
-  background: #EF2F3C;
-}
-
-.hours {
   background: #eeeeee;
   color: #183059;
 }
 
-.minutes {
-  background: #276FBF;
-}
-
-.seconds {
-  background: #F0A202;
-}
 
 .numbers {
   font-family: 'Montserrat', sans-serif;
@@ -88,14 +74,14 @@ body{
     
 <div id="timer">
 
-    <div class="hours"> 
+    <div class="block"> 
         <div id="days" class="numbers "> </div>days</div> 
-      <div class="hours"> 
-        <div  id="hours" class="numbers"> </div>hours</div> 
-      <div class="hours"> 
-        <div  id="minutes" class="numbers"> </div>minutes</div> 
-      <div   class="hours"> 
-        <div id="seconds" class="numbers"> </div>seconds</div> 
+      <div class="block"> 
+        <div  id="hours" class="numbers"> </div>days</div> 
+      <div class="block"> 
+        <div  id="minutes" class="numbers"> </div>days</div> 
+      <div   class="block"> 
+        <div id="seconds" class="numbers"> </div>days</div> 
       </div>
 
 </div>
