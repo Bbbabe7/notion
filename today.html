@@ -122,13 +122,17 @@ let timer = setInterval(function() {
   const day = today.toString().slice(0, 3);
 
   const ampm = today.getHours() < 12 ? "AM" : "PM";
-  const h24 = today.getHours();
-  const hh24 = String(h24).padStart(2, '0');
+  let h24 = today.getHours();
+    if (h24 == 0) {
+        h24 = 12
+    } else (h24 > 12) {
+        h24 -= 12
+    }
   const mi = today.getMinutes();
   const mi00 = String(mi).padStart(2, '0');
   const ss = today.getSeconds();
   const ss00 = String(ss).padStart(2, '0');
-  const HMS = `${hh24}:${mi00}:${ss00} ${ampm}`;
+  const HMS = `${h24}:${mi00}:${ss00} ${ampm}`;
 
   // get the difference
     const diff1 = myDate1 - today;
