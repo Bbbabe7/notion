@@ -123,11 +123,11 @@ let timer = setInterval(function() {
 
   const ampm = today.getHours() < 12 ? "AM" : "PM";
   let h24 = today.getHours();
-    if (h24 == 0) {
-        h24 = 12
-    } else (h24 > 12) {
-        h24 -= 12
-    }
+  //   if (h24 == 0) {
+  //       h24 = 12
+  //   } else (h24 > 12) {
+  //       h24 -= 12
+  //   }
   const mi = today.getMinutes();
   const mi00 = String(mi).padStart(2, '0');
   const ss = today.getSeconds();
