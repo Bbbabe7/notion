@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
+    <title>Document</title>
+    <style>
+
+body{
+    background: none;
+}
+  
+#timer {
+  color: #eeeeee;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: .7em;
+  letter-spacing: 5px;
+}
+
+.block {
+  display: inline-block;
+  padding: 20px;
+  width: 80px;
+  border-radius: 5px;
+  background: #eeeeee;
+  color: #183059;
+  margin: 5px;
+}
+
+.numbers {
+  font-family: 'Montserrat', sans-serif;
+  color:  #183059;
+  font-size: 4em;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+    
+<div id="timer">
+  <div class="block"> 
+    <div> 2024 </div>
+    <div id="days" class="numbers"> </div> days
+  </div> 
+</div>
+
+</div>
+
+</body>
+<script>
+const year = new Date().getFullYear();
+const myDate1 = new Date('Dec 31, 2023 23:59:59');
+const myDate2 = new Date('Oct 22, 2023 23:59:59');
+// const myDate3 = new Date('Nov 30, 2023 00:00:00');
+// const myDate4 = new Date('Dec 31, 2023 00:00:00');
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+    const diff1 = myDate1 - today;
+    const diff2 = myDate2 - today;
+    // const diff3 = myDate3 - today;
+    // const diff4 = myDate4 - today;
+
+  // math
+    let days1 = Math.floor(diff1 / (1000 * 60 * 60 * 24));
+    let days2 = Math.floor(diff2 / (1000 * 60 * 60 * 24));
+    // let days3 = Math.floor(diff3 / (1000 * 60 * 60 * 24));
+    // let days4 = Math.floor(diff4 / (1000 * 60 * 60 * 24));
+
+
+  // display
+  document.getElementById("days").innerHTML=days1
+  document.getElementById("hours").innerHTML=days2
+  // document.getElementById("minutes").innerHTML=days3
+  // document.getElementById("seconds").innerHTML=days4
+
+
+
+}, 1);
+</script>
+</html>
