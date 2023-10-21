@@ -178,6 +178,15 @@ let timer = setInterval(function() {
 
 //   let test = document.getElementById("test")
 
+  const weekday = today.getDay();
+
+  if (weekday == 0 || weekday == 6) {
+    icon1 = "fa-regular fa-clock fa-1x"
+    icon2 = "fa-regular fa-clock fa-2x"
+    color = "#ffffff"
+  }  else { 
+    
+
   if (h24 == 10) {
     next = timeList[1]
     icon1 = iconSmall.work
@@ -209,6 +218,7 @@ let timer = setInterval(function() {
     color = "#ffffff"
   }
 
+  }
   
 
   // get the difference
