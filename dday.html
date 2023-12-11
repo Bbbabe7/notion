@@ -46,9 +46,9 @@ body{
     <div class="block"> 
         <div> 2024 </div>
         <div id="days" class="numbers"> </div>days</div> 
-      <div class="block">
+<!--       <div class="block">
         <div> 면허필기 </div>
-        <div  id="hours" class="numbers"> </div>days</div> 
+        <div  id="hours" class="numbers"> </div>days</div>  -->
 <!--       <div class="block"> 
         <div  id="minutes" class="numbers"> </div>days</div> 
       <div class="block"> 
@@ -73,20 +73,20 @@ let timer = setInterval(function() {
 
   // get the difference
     const diff1 = myDate1 - today;
-    const diff2 = myDate2 - today;
+    // const diff2 = myDate2 - today;
     // const diff3 = myDate3 - today;
     // const diff4 = myDate4 - today;
 
   // math
     let days1 = Math.floor(diff1 / (1000 * 60 * 60 * 24));
-    let days2 = Math.floor(diff2 / (1000 * 60 * 60 * 24));
+    // let days2 = Math.floor(diff2 / (1000 * 60 * 60 * 24));
     // let days3 = Math.floor(diff3 / (1000 * 60 * 60 * 24));
     // let days4 = Math.floor(diff4 / (1000 * 60 * 60 * 24));
 
 
   // display
   document.getElementById("days").innerHTML=days1
-  document.getElementById("hours").innerHTML=days2
+  // document.getElementById("hours").innerHTML=days2
   // document.getElementById("minutes").innerHTML=days3
   // document.getElementById("seconds").innerHTML=days4
 
