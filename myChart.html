@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['리더십', '실행력', '분석력', '집요함', '문제해결력'],
+        datasets: [{
+          label: 'Strength',
+          data: [6.5, 7, 8, 7, 9],
+          fill: true,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgb(54, 162, 235)',
+          pointBackgroundColor: 'rgb(54, 162, 235)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgb(54, 162, 235)'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            ticks: {
+              stepSize: 2,
+              maxTicksLimit: 10
+            },
+            beginAtZero: true,
+            grid: {
+              color: 'rgb(244,244,244)'
+            },
+            pointLabels: {
+              font: {
+                size: 12,
+                weight: '700',
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+  
+</body>
+</html>
