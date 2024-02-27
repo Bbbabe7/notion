@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Yourself</title>
+<style>
+  @font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'GangwonEdu_OTFBoldA';
+  }
+  body {
+    background: none;
+    color: white;
+  }
+  div {
+    /* div 내 가운데 정렬 */
+    text-align: center;
+  }
+  .container {
+    margin: 10px;
+    /* 자식Div 수직 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    /* 자식Div 가운데 정렬 */
+    justify-content: center;
+  }
+  .column {
+    flex: 1;
+  }
+  #today {
+    max-width: 400px;
+    border-style: groove;
+    border-color: #ffffff;
+    border-radius: 10px;
+    margin-left: 12px;
+    margin-right: 20px;
+    padding: 12px;
+  }
+  #date {
+    margin: 10px;
+    font-size: 24px;
+  }
+  #clock {
+    font-size: 30px;
+  }
+  .phrase {
+    font-size: 30px;
+    line-height: 200%;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div id="today" class="column">
+    <div id="date"></div>
+    <div class="container">
+      <i class="fa-solid fa-clock" style="color: #ffffff;"></i>&nbsp;<div id="clock"></div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="phrase">💖&nbsp;&nbsp;삶에 의미를 주는 것은 권리가 아니라, 책임이다</div>
+    <div class="phrase">💡&nbsp;&nbsp;목표 달성을 위해 오늘 할 수 있는 단 하나는 무엇인가?</div>
+  </div>
+
+</div>
+
+<script>
+function updateClock() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth() + 1;
+  var day = now.getDate();
+  var dayOfWeek = now.toLocaleDateString('ko-KR', { weekday: 'short' });
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var dateString = `${year}. ${month}. ${day}  (${dayOfWeek})`
+  var timeString = `${hour}:${minute < 10 ? '0' : ''}${minute}`
+
+  // var timeString = year + '. ' + month + '. ' + day + '.  ' + dayOfWeek + ' ' + hour + ':' + (minute < 10 ? '0' : '') + minute;
+  document.getElementById('date').textContent = dateString;
+  document.getElementById('clock').textContent = timeString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to display clock immediately
+updateClock();
+
+// Function to handle input in textarea
+document.getElementById('sentenceInput').addEventListener('input', function(event) {
+  var inputValue = event.target.value;
+  console.log(inputValue);
+});
+</script>
+<script src="https://kit.fontawesome.com/c8410d80c8.js" crossorigin="anonymous"></script>
+</body>
+</html>
